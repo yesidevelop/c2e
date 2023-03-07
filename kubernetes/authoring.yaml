@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: c2e
+  name: authoring
+spec:
+  selector:
+    matchLabels:
+      app: authoring
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: authoring
+    spec:
+      containers:
+      - name: authoring
+        image: quay.io/yesidevelop/authoring:latest
+        ports:
+        - containerPort: 3000
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: authoring
+  namespace: c2e
+spec:
+  selector:
+    app: authoring
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 3000

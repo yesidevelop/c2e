@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: c2e
+  name: media
+spec:
+  selector:
+    matchLabels:
+      app: media
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: media
+    spec:
+      containers:
+      - name: media
+        image: quay.io/yesidevelop/media:latest
+        ports:
+        - containerPort: 3000
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: media
+  namespace: c2e
+spec:
+  selector:
+    app: media
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 3000
