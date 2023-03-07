@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: cms
-        image: quay.io/curriki/cms:latest
+        image: quay.io/yesidevelop/cms:latest
         ports:
         - containerPort: 2000
 

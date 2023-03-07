@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: quay.io/curriki/webapp:latest
+        image: quay.io/yesidevelop/webapp:latest
         ports:
         - containerPort: 3000
 

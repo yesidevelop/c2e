@@ -10,8 +10,8 @@ router.get('/', function(req, res, next) {
 /* GET cms page. */
 router.get('/cms', function(req, res1, next) {
   var options = {
-    host: 'localhost',
-    port: 2000,
+    host: 'cms',
+    port: 80,
     path: '/cms'
   };
   var body = '';
