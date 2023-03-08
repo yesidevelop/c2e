@@ -9,12 +9,12 @@ export class CmsController {
     @inject('services.People')
     protected peopleService: People,
   ) { }
-  @get('/cms')
-  cms(): string {
-    return 'Rendering from CMS!';
-  }
+  // @get('/cms')
+  // cms(): string {
+  //   return 'Rendering from CMS!';
+  // }
 
-  @get('/people')
+  @get('/cms')
   async getCharacter(
   ): Promise<string> {
     //Preconditions
