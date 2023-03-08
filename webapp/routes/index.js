@@ -9,11 +9,20 @@ router.get('/', function(req, res, next) {
 
 /* GET cms page. */
 router.get('/cms', function(req, res1, next) {
+  // var host = 'localhost';
+  // var port = 3002;
+  // var path = '/cms';
+
+  var host = 'cms';
+  var port = 80;
+  var path = '/cms';
+
   var options = {
-    host: 'cms',
-    port: 80,
-    path: '/cms'
+    host: host,
+    port: port,
+    path: path
   };
+  
   var body = '';
   var req = http.get(options, function(res) {
     console.log('STATUS: ' + res.statusCode);
@@ -41,10 +50,20 @@ router.get('/cms', function(req, res1, next) {
 
 /* GET authoring page. */
 router.get('/authoring', function(req, res1, next) {
+
+  // var host = 'localhost';
+  // var port = 3003;
+  // var path = '/users';
+
+  var host = 'authoring';
+  var port = 80;
+  var path = '/users';
+
+
   var options = {
-    host: 'authoring',
-    port: 80,
-    path: '/authoring'
+    host: host,
+    port: port,
+    path: path
   };
   var body = '';
   var req = http.get(options, function(res) {
@@ -105,11 +124,20 @@ router.get('/authoring/users', function(req, res1, next) {
 
 /* GET media page. */
 router.get('/media', function(req, res1, next) {
+  // var host = 'localhost';
+  // var port = 3001;
+  // var path = '/media';
+
+  var host = 'media';
+  var port = 80;
+  var path = '/media';
+
   var options = {
-    host: 'media',
-    port: 80,
-    path: '/media'
+    host: host,
+    port: port,
+    path: path
   };
+  console.log(options);
   var body = '';
   var req = http.get(options, function(res) {
     console.log('STATUS: ' + res.statusCode);

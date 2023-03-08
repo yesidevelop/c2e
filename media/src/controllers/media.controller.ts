@@ -7,8 +7,8 @@ import {get} from '@loopback/rest';
 export class MediaController {
   constructor() {}
   @get('/media')
-  authoring(): string {
-    return 'https://elearningindustry.com/wp-content/uploads/2020/01/authoring-tools-8-questions-to-ask.jpg';
+  media(): string {
+    return 'https://dev.currikistudio.org/api/storage/projects/63cfea46927c8.png';
   }
 }
 
