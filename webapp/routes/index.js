@@ -27,7 +27,45 @@ router.get('/cms', function(req, res1, next) {
     }).on('end', function() {
       body = Buffer.concat(bodyChunks);
       console.log('BODY: ' + body);
-      res1.render('index', { title: body });
+
+      
+
+      // calling media service from CMS
+      var options1 = {
+        host: 'media',
+        port: 80,
+        path: '/media'
+      };
+      var body = '';
+      var req_media = http.get(options1, function(res) {
+        // Buffer the body entirely for processing as a whole.
+        var bodyChunks = [];
+        res.on('data', function(chunk) {
+          bodyChunks.push(chunk);
+        }).on('end', function() {
+          body = Buffer.concat(bodyChunks);
+        })
+      });
+      
+      req_media.on('error', function(e) {
+        console.log('ERROR: ' + e.message);
+      });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      res1.render('cms', { title: body });
       // ...and/or process the entire body here.
     })
   });
@@ -59,7 +97,7 @@ router.get('/authoring', function(req, res1, next) {
     }).on('end', function() {
       body = Buffer.concat(bodyChunks);
       console.log('BODY: ' + body);
-      res1.render('index', { title: body });
+      res1.render('authoring', { title: body });
       // ...and/or process the entire body here.
     })
   });
@@ -91,7 +129,7 @@ router.get('/authoring/users', function(req, res1, next) {
     }).on('end', function() {
       body = Buffer.concat(bodyChunks);
       console.log('BODY: ' + body);
-      res1.render('index', { title: body });
+      res1.render('users', { title: body });
       // ...and/or process the entire body here.
     })
   });
@@ -123,7 +161,7 @@ router.get('/media', function(req, res1, next) {
     }).on('end', function() {
       body = Buffer.concat(bodyChunks);
       console.log('BODY: ' + body);
-      res1.render('index', { title: body });
+      res1.render('media', { title: body });
       // ...and/or process the entire body here.
     })
   });
