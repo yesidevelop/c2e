@@ -12,7 +12,7 @@ export class CmsController {
   @get('/cms')
   cms(): object {
     // calling media service
-    // this.peopleService.getCharacter();
+    this.peopleService.getCharacter();
     //returning dummy response
     return {
       src: 'https://currikicdn.s3.us-west-2.amazonaws.com/specifications/cms.png',
