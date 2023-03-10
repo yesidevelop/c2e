@@ -33,3 +33,11 @@ spec:
         host: cms
         port:
           number: 80
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: webapp
+        port:
+          number: 80

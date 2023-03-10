@@ -36,7 +36,7 @@ router.get('/cms', function(req, res1, next) {
     }).on('end', function() {
       body = Buffer.concat(bodyChunks);
       console.log('BODY: ' + body);
-      res1.render('cms', { title: body });
+      res1.render('cms', { data: JSON.parse(body) });
       // ...and/or process the entire body here.
     })
   });
@@ -92,11 +92,20 @@ router.get('/authoring', function(req, res1, next) {
 
 /* GET cms page. */
 router.get('/authoring/users', function(req, res1, next) {
+  // var host = 'localhost';
+  // var port = 3003;
+  // var path = '/users';
+
+  var host = 'authoring';
+  var port = 80;
+  var path = '/users';
+
   var options = {
-    host: 'authoring',
-    port: 80,
-    path: '/users'
+    host: host,
+    port: port,
+    path: path
   };
+  
   var body = '';
   var req = http.get(options, function(res) {
     console.log('STATUS: ' + res.statusCode);
@@ -151,7 +160,7 @@ router.get('/media', function(req, res1, next) {
     }).on('end', function() {
       body = Buffer.concat(bodyChunks);
       console.log('BODY: ' + body);
-      res1.render('media', { title: body });
+      res1.render('media', { data: JSON.parse(body) });
       // ...and/or process the entire body here.
     })
   });
