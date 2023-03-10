@@ -10,7 +10,7 @@ export class AuthoringController {
   authoring(): object {
     return {
       src: 'https://currikicdn.s3.us-west-2.amazonaws.com/specifications/authoring.png',
-      title: 'Authoring Service => Postgres'
+      title: 'Authoring Service'
     }
   }
 }
