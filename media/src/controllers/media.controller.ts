@@ -10,7 +10,7 @@ export class MediaController {
   media(): object {
     return {
       src: 'https://currikicdn.s3.us-west-2.amazonaws.com/specifications/spec_media.png',
-      title: 'Media'
+      title: 'Media Service'
     }
     
   }

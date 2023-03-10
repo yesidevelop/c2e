@@ -78,7 +78,7 @@ router.get('/authoring', function(req, res1, next) {
     }).on('end', function() {
       body = Buffer.concat(bodyChunks);
       console.log('BODY: ' + body);
-      res1.render('authoring', { title: body });
+      res1.render('media', { data: JSON.parse(body) });
       // ...and/or process the entire body here.
     })
   });

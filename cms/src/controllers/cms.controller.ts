@@ -16,7 +16,7 @@ export class CmsController {
     //returning dummy response
     return {
       src: 'https://currikicdn.s3.us-west-2.amazonaws.com/specifications/cms.png',
-      title: 'CMS Service (Calling Media Service also)'
+      title: 'CMS Service => Media Service'
     }
   }
 
