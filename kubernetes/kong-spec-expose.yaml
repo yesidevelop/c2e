@@ -1,0 +1,8 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata:
+  name: kong-spec-expose-example
+  namespace: kong-istio
+config: 
+  spec_url: https://github.com/OAI/OpenAPI-Specification/blob/master/examples/v2.0/json/petstore.json
+plugin: kong-spec-expose
